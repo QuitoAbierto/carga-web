@@ -1,5 +1,5 @@
 module.exports = {
   api: {
-    host: 'http://localhost:5000/'
+    host: 'http://107.170.120.70/'
   }
 };
