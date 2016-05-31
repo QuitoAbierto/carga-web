@@ -7,12 +7,24 @@ let selectedLocation = undefined
 
 myMap.locate({setView: true, maxZoom: 16})
 let myMarker = L.marker([-0.1828190562356577, -78.48433256149292])
-myMarker.addTo(myMap)
 
 function onMapClick(e) {
+  myMarker.setLatLng(e.latlng)
+}
+
+function addMarker(e) {
   myMarker.setLatLng(e.latlng)
   myMarker.update()
   console.log(e.latlng)
   selectedLocation = e.latlng
+  myMarker.addTo(myMap)
 }
-myMap.on('click', onMapClick)
+
+myMap.on('click', addMarker)
+myMap.on('locationfound', addMarker)
+
+function locateUser() {
+  myMap.locate({setView: true, maxZoom: 16})
+}
+
+$('#locator').on('click', locateUser)
