@@ -45,12 +45,14 @@ gulp.task('build', () =>
     .pipe(gulp.dest(settings.distFolder))
 )
 
-gulp.task('default', sequence(
-  'clean',
-  'translate',
-  'config',
-  'build'
-))
+gulp.task('default', (cb) =>
+  sequence(
+    'clean',
+    'translate',
+    'config',
+    'build'
+  )(cb)
+)
 
 gulp.task('watch-js', () =>
   watch('public/src/*.js', () =>
