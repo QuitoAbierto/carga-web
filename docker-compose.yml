@@ -1,7 +1,6 @@
 version: '2'
 services:
-  api:
+  web:
     build: public
     ports:
       - "80:80"
-      
