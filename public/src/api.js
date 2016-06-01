@@ -26,7 +26,7 @@ $( () => {
         location: selectedLocation
       }
       $.ajax({
-        url: `${config.api.host}api/recurso`,
+        url: `${config.api.host}api/parada`,
         method: 'POST',
         data: JSON.stringify(data),
         contentType: "application/json",
