@@ -20,10 +20,22 @@ function addMarker(e) {
   myMarker.addTo(myMap)
 }
 
+let locatorIcon = 'glyphicon glyphicon-screenshot'
+let loadingIcon = 'glyphicon glyphicon-refresh spin'
+let icon = $('#locator h3 i')
+
+function locationFound(e) {
+  addMarker(e)
+  icon.removeClass(loadingIcon)
+  icon.addClass(locatorIcon)
+}
+
 myMap.on('click', addMarker)
-myMap.on('locationfound', addMarker)
+myMap.on('locationfound', locationFound)
 
 function locateUser() {
+  icon.removeClass(locatorIcon)
+  icon.addClass(loadingIcon)
   myMap.locate({setView: true, maxZoom: 16})
 }
 
