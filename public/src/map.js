@@ -22,7 +22,7 @@ function addMarker(e) {
 
 let locatorIcon = 'glyphicon glyphicon-screenshot'
 let loadingIcon = 'glyphicon glyphicon-refresh spin'
-let icon = $('#locator h3 i')
+let icon = $('#locator span')
 
 function locationFound(e) {
   addMarker(e)
