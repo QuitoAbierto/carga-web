@@ -54,6 +54,18 @@ gulp.task('default', (cb) =>
   )(cb)
 )
 
+gulp.task('start', shell.task([
+  'docker-compose -f docker-compose.yml -f docker-compose.dev.yml build',
+  'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up'
+]))
+
+gulp.task('app', (cb) =>
+  sequence(
+    'default',
+    'start'
+  )(cb)
+)
+
 gulp.task('watch-js', () =>
   watch('public/src/*.js', () =>
     gulp.start('default')
