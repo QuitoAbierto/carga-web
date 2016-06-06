@@ -10,8 +10,8 @@ Característica: Cargar información
     Dado que ingreso a la aplicación
     Cuando estoy en la página de inicio
     Y lleno el formulario con los siguientes datos:
-      | nombre             | descripción                       | ubicación |
-      | Parada la carolina | Esta es una parada de la linea #5 | 123,123   |
+      | linea    | nombre             | descripción                       | ubicación |
+      | Alborada | Parada la carolina | Esta es una parada de la linea #5 | 123,123   |
     Cuando envío el formulario
     Entonces veo el mensaje "Guardado exitosamente"
 
