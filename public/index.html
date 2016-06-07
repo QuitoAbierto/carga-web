@@ -10,6 +10,7 @@
   <!-- Bootstrap -->
   <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/css/leaflet.css" rel="stylesheet">
+  <link href="vendor/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/form.css" rel="stylesheet">
 
@@ -34,22 +35,25 @@
               </button>
             </li>
             <li class="fields-container form-group hide inactive" data-color="#7C6992">
-              <h3>Complete la siguiente informacion</h3>
-              <div class="form-group">
-                <select class="form-control" id="line-field">
-                  <option value="" selected="">Seleccione linea de bus</option>
-                  <option value="Alborada">Alborada</option>
-                  <option value="Catar">Catar</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="name-field" placeholder="Nombre" required="required"/>
-              </div>
-              <div class="form-group">
-                <textarea rows="4" type="text" class="form-control" id="description-field" placeholder="Descripción" required=""></textarea>
+              <div id="form-fields">
+                <h3>Complete la siguiente informacion</h3>
+                <div class="form-group">
+                  <select class="form-control" id="line-field">
+                    <option value="" selected="">Seleccione linea de bus</option>
+                    <option value="Alborada">Alborada</option>
+                    <option value="Catar">Catar</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name-field" placeholder="Nombre" required="required"/>
+                </div>
+                <div class="form-group">
+                  <textarea rows="4" type="text" class="form-control" id="description-field" placeholder="Descripción" required=""></textarea>
+                </div>
               </div>
               <div id="message-box" class="form-group"></div>
-              <a href="#/" id="submit" class="btn btn-lg btn-info btn-block">Guardar <span class="glyphicon glyphicon-save"></span></a>
+              <a href="#/" id="submit" class="btn btn-lg btn-info btn-block">Guardar <i class="fa fa-floppy-o"></i></a>
+              <a href="/" id="new-stop" class="hide btn btn-lg btn-info btn-block">Nueva parada <i class="fa fa-plus-circle"></i></a>
               <br/>
             </li>
           </ul>

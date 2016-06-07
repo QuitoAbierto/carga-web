@@ -1,24 +1,33 @@
 # language: es
 
-Característica: Cargar información
-  Escenario: Abriendo la página de inicio
+Característica: Cargar información de paradas
+  Escenario: Formulario de datos
     Dado que ingreso a la aplicación
     Cuando estoy en la página de inicio
-    Entonces veo un mapa
+    Entonces veo el formulario para cargar los datos
 
-  Escenario: Guardar una ubicación
+  Escenario: Guardar una parada
     Dado que ingreso a la aplicación
     Cuando estoy en la página de inicio
     Y selecciono una ubicación
     Y lleno el formulario con los siguientes datos:
       | linea    | nombre             | descripción                       |
       | Alborada | Parada la carolina | Esta es una parada de la linea #5 |
-    Cuando envío el formulario
-    Entonces veo el mensaje "Guardado exitosamente"
+    Y envío el formulario
+    Entonces veo el mensaje "Parada guardada exitosamente"
 
-  Escenario: El usuario no provee información
+  Escenario: El voluntario no provee información
     Dado que ingreso a la aplicación
     Cuando estoy en la página de inicio
     Y selecciono una ubicación
-    Cuando envío el formulario
+    Y envío el formulario
     Entonces veo el mensaje "Todos los campos son obligatorios"
+
+  Escenario: El voluntario quiere guardar una nueva parada
+    Dado que ingreso a la aplicación
+    Cuando estoy en la página de inicio
+    Y cargo la información de una parada
+    Y envío el formulario
+    Entonces veo la opción de crear otra parada
+    Cuando quiero crear una nueva parada
+    Entonces veo el formulario para cargar los datos

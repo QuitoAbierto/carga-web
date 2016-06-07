@@ -21,6 +21,13 @@ html, body, #my-map {
   padding: 0 10px !important;
 }
 
+.form-hidden {
+  height: 150px;
+  opacity: 0;
+  overflow-y: hidden;
+  transition: height 1s, opacity 0.5s;
+}
+
 .next {
   position: absolute;
   bottom:3%;
