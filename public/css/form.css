@@ -1,0 +1,198 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight:300;
+  margin-top:-1px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: #2B3E50
+}
+html, body, #my-map {
+    height: 100%;
+}
+
+.map-container {
+  height: 75%;
+}
+
+.fields-container {
+  padding: 0 10px !important;
+}
+
+.next {
+  position: absolute;
+  bottom:3%;
+  right:3%;
+  z-index: 10000;
+}
+
+.covering {
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%; overflow:hidden;
+}
+
+.fadeInUp {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+.fadeOutDown {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+.fadeOutLeftBig {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-1000px);
+  transition: visibility 0s 1s, opacity 1s linear, transform 1s;
+}
+
+.fadeInRightBig {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.centerUp {
+  margin:0 auto;
+  height: 100%
+}
+
+.progress-form {
+  margin:0;
+  padding:0;
+  min-height:100%
+}
+
+.progress-form  li {
+  margin:0;
+  padding:0;
+  list-style:none;
+  position:absolute;
+  width:100%
+}
+
+.form-group input, .form-group textarea  {
+  border: none;
+  background: rgba(255,255,255, .2);
+  height: auto;
+  padding: 15px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: 36px;
+  color:#fff;
+  outline: 0;
+  width: 100%
+}
+
+.form-group textarea {font-size:18px; padding:10px; min-height:300px;}
+.form-group input:focus, .form-group textarea:focus {
+  outline: 0;
+  border: none;
+  box-shadow: none;
+}
+input:active  {outline:0 !important}
+.h1-header {
+  font-weight:100;
+  margin-top:0;
+  font-size:36px;
+  background:#D9534F;
+  padding:20px 25px;
+  width:100%;
+  margin-bottom: 0px;
+}
+::focus {outline:none !important}
+::blur {outline:none !important}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
+::-webkit-input-placeholder {
+   color:rgba(255,255,255, 0.3) !important  ;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #4C9ED9 !important  ;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #4C9ED9 !important  ;
+}
+
+:-ms-input-placeholder {
+   color: #4C9ED9 !important  ;
+}
+
+@media (max-width: 480px) {
+  .h1-header {
+  	position:static;
+    font-weight: 100;
+    margin-top: 0;
+    font-size: 18px;
+    padding: 25px;
+  }
+
+  .form-group label {font-size:16px;}
+  .form-group label h1 {font-size:36px; font-weight:700}
+
+  .form-group textarea {
+    font-size: 18px;
+    padding: 10px;
+    min-height: 150px;
+  }
+
+  .form-group input, .form-group textarea {
+    border: none;
+    background: rgba(255,255,255, .2);
+    padding: 35px 15px;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 20px;
+    color: #fff;
+    outline: 0;
+    width: 100%;
+  }
+}
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 736px)
+and (orientation : landscape) {
+    /* CSS here */
+
+  .h1-header {
+  	position:static;
+    font-weight: 100;
+    margin-top: 0;
+    font-size: 18px;
+    padding: 0 0 10px 20px;
+    margin-left: -10px;
+  }
+
+
+  .form-group label h1 {font-size:24px;}
+  .form-group label {font-size:14px;}
+  .form-group input, .form-group textarea {
+    font-size:18px;padding: 15px 15px;
+  }
+  .form-group textarea {min-height:150px;}
+
+}

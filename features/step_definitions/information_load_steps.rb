@@ -11,13 +11,16 @@ Entonces(/^veo un mapa$/) do
   page.find '#my-map'
 end
 
+Cuando(/^selecciono una ubicación$/) do
+  find('#my-map').click
+  find('.next').click
+end
+
 Cuando(/^lleno el formulario con los siguientes datos:$/) do |table|
   data = table.hashes[0]
+  select data['linea'], :from => 'line-field'
   fill_in 'name-field', :with => data['nombre']
   fill_in 'description-field', :with => data['descripción']
-  select data['linea'], :from => 'line-field'
-  lat, long = data['ubicación'].split(',')
-  execute_script("selectedLocation = {lat: #{lat}, long: #{long}}")
 end
 
 Cuando(/^envío el formulario$/) do

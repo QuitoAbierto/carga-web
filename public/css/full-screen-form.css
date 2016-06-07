@@ -1,0 +1,47 @@
+html, body, #my-map {
+    height: 100%;
+}
+
+.centerUp {margin:0 auto; height: 100%}
+
+.map-container {
+  height: 75%;
+}
+
+.fields-container {
+  padding: 0 10px !important;
+}
+
+.covering {
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%; overflow:hidden;
+}
+
+.fadeInUp {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+.fadeOutDown {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+.fadeOutLeftBig {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-1000px);
+  transition: visibility 0s 1s, opacity 1s linear, transform 1s;
+}
+
+.fadeInRightBig {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 1s, opacity 1s linear;
+}

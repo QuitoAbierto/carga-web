@@ -5,12 +5,8 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 
 let selectedLocation = undefined
 
-myMap.locate({setView: true, maxZoom: 16})
+myMap.locate({setView: true, maxZoom: 18})
 let myMarker = L.marker([-0.1828190562356577, -78.48433256149292])
-
-function onMapClick(e) {
-  myMarker.setLatLng(e.latlng)
-}
 
 function addMarker(e) {
   myMarker.setLatLng(e.latlng)
@@ -18,6 +14,7 @@ function addMarker(e) {
   console.log(e.latlng)
   selectedLocation = e.latlng
   myMarker.addTo(myMap)
+  $('.next').removeClass('hide')
 }
 
 let locatorIcon = 'glyphicon glyphicon-screenshot'
@@ -25,7 +22,6 @@ let loadingIcon = 'glyphicon glyphicon-refresh spin'
 let icon = $('#locator span')
 
 function locationFound(e) {
-  addMarker(e)
   icon.removeClass(loadingIcon)
   icon.addClass(locatorIcon)
 }
