@@ -52,8 +52,8 @@ html, body, #my-map {
 .fadeOutLeftBig {
   visibility: hidden;
   opacity: 0;
-  transform: translateX(-1000px);
-  transition: visibility 0s 1s, opacity 1s linear, transform 1s;
+  transform: translateX(-1500px);
+  transition: visibility 0s 1s, opacity 0.5s linear, transform 1s;
 }
 
 .fadeInRightBig {
