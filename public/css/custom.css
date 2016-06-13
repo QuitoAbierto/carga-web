@@ -24,6 +24,16 @@
   position: relative;
 }
 
+.header-link {
+  text-decoration: none;
+  color: white;
+}
+
+.header-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .spin {
     -webkit-animation: spin 1000ms infinite linear;
     animation: spin 1000ms infinite linear;

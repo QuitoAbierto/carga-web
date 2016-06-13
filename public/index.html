@@ -23,42 +23,32 @@
 </head>
 <body>
   <div class="covering">
-    <h1 class="h1-header bounceInLeft">Quito Abierto</h1>
-    <div class="container-fluid">
-      <div class="centerUp">
-        <form>
-          <ul class="progress-form">
-            <li class="map-container form-group fadeInRightBig active" data-color="#E1523D">
-              <div id="my-map"></div>
-              <button id="locator" type="button" class="btn btn-sm btn-default map-control">
-                &nbsp;<span class="glyphicon glyphicon-screenshot"></span>&nbsp;
-              </button>
-            </li>
-            <li class="fields-container form-group hide inactive" data-color="#7C6992">
-              <div id="form-fields">
-                <h3>Complete la siguiente informacion</h3>
-                <div class="form-group">
-                  <select class="form-control" id="line-field">
-                    <option value="" selected="">Seleccione linea de bus</option>
-                    <option value="Alborada">Alborada</option>
-                    <option value="Catar">Catar</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" id="name-field" placeholder="Nombre" required="required"/>
-                </div>
-                <div class="form-group">
-                  <textarea rows="4" type="text" class="form-control" id="description-field" placeholder="Descripción" required=""></textarea>
-                </div>
-              </div>
-              <div id="message-box" class="form-group"></div>
-              <a href="#/" id="submit" class="btn btn-lg btn-info btn-block">Guardar <i class="fa fa-floppy-o"></i></a>
-              <a href="/" id="new-stop" class="hide btn btn-lg btn-info btn-block">Nueva parada <i class="fa fa-plus-circle"></i></a>
-              <br/>
-            </li>
-          </ul>
-        </form>
-        <button class="btn btn-info btn-lg next hide" >Siguiente <span class="glyphicon glyphicon-play"></span></button>
+    <h1 class="h1-header bounceInLeft"><a href="/" class="header-link">Quito Abierto</a></h1>
+    <div class="container">
+      <div class="welcome-message-container text-center">
+        <h1>
+          Bienvenidx a Quito Abierto
+        </h1>
+        <br/>
+        <h1><i class="fa fa-map-o" aria-hidden="true"></i></h1>
+        <br/>
+        <p class="lead">
+          Para empezar a mapear selecciona una de las opciones de abajo:
+        </p>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-3 col-xs-6 col-xs-offset-0">
+            <img src="/images/placeholder.png" alt="Paradas" class="img-rounded">
+            <br/>
+            <br/>
+            <a id="stop-mapping-button" href="/pages/stop.html" class="btn btn-lg btn-default">Mapear paradas</a>
+          </div>
+          <div class="col-md-offset-2 col-md-3 col-xs-6 col-xs-offset-0">
+            <img src="/images/route.png" alt="Rutas" class="img-rounded">
+            <br/>
+            <br/>
+            <a href="/pages/route.html" class="btn btn-lg btn-default">Mapear rutas</a>
+          </div>
+        </div>
       </div>
       <div class="clearfix"></div>
     </div>
@@ -67,9 +57,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="vendor/js/bootstrap.min.js"></script>
-  <script src="vendor/js/leaflet.js"></script>
-  <script src="dist/map.js"></script>
   <script src="dist/api.bundle.js"></script>
-  <script src="dist/form.js"></script>
 </body>
 </html>

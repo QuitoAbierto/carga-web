@@ -4,7 +4,8 @@ Dado(/^que ingreso a la aplicación$/) do
   visit '/'
 end
 
-Cuando(/^estoy en la página de inicio$/) do
+Cuando(/^estoy en la página de mapeo de paradas$/) do
+  find('#stop-mapping-button').click
 end
 
 Entonces(/^veo el formulario para cargar los datos$/) do

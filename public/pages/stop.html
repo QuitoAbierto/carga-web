@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Quito Abierto</title>
+
+  <!-- Bootstrap -->
+  <link href="/vendor/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/css/leaflet.css" rel="stylesheet">
+  <link href="/vendor/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="/css/form.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="covering">
+    <h1 class="h1-header bounceInLeft"><a href="/" class="header-link">Quito Abierto</a></h1>
+    <div class="container-fluid">
+      <div class="centerUp">
+        <form>
+          <ul class="progress-form">
+            <li class="map-container form-group fadeInRightBig active" data-color="#E1523D">
+              <div id="my-map"></div>
+              <button id="locator" type="button" class="btn btn-sm btn-default map-control">
+                &nbsp;<span class="glyphicon glyphicon-screenshot"></span>&nbsp;
+              </button>
+            </li>
+            <li class="fields-container form-group hide inactive" data-color="#7C6992">
+              <div id="form-fields">
+                <h3>Complete la siguiente informacion</h3>
+                <div class="form-group">
+                  <select class="form-control" id="line-field">
+                    <option value="" selected="">Seleccione linea de bus</option>
+                    <option value="Alborada">Alborada</option>
+                    <option value="Catar">Catar</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name-field" placeholder="Nombre" required="required"/>
+                </div>
+                <div class="form-group">
+                  <textarea rows="4" type="text" class="form-control" id="description-field" placeholder="Descripción" required=""></textarea>
+                </div>
+              </div>
+              <div id="message-box" class="form-group"></div>
+              <a href="#/" id="submit" class="btn btn-lg btn-info btn-block">Guardar <i class="fa fa-floppy-o"></i></a>
+              <a href="/pages/stop.html" id="new-stop" class="hide btn btn-lg btn-info btn-block">Nueva parada <i class="fa fa-plus-circle"></i></a>
+              <br/>
+            </li>
+          </ul>
+        </form>
+        <button class="btn btn-info btn-lg next hide" >Siguiente <span class="glyphicon glyphicon-play"></span></button>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="/vendor/js/bootstrap.min.js"></script>
+  <script src="/vendor/js/leaflet.js"></script>
+  <script src="/dist/map.js"></script>
+  <script src="/dist/api.bundle.js"></script>
+  <script src="/dist/form.js"></script>
+</body>
+</html>
