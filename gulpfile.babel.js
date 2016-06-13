@@ -36,10 +36,24 @@ gulp.task('config', () =>
 )
 
 gulp.task('build', () =>
-  gulp.src('public/dist/api.js')
+  gulp.src('public/dist/')
     .pipe(webpack({
+      resolve: {
+        root: __dirname,
+        modulesDirectories: ['node_modules'],
+        extensions: ["", ".js"]
+      },
+      resolveLoader: {
+        modulesDirectories: [
+          'node_modules'
+        ]
+      },
+      entry: {
+        stop: 'public/dist/stop.js',
+        route: 'public/dist/route.js'
+      },
       output: {
-        filename: 'api.bundle.js'
+        filename: '[name].bundle.js'
       }
     }))
     .pipe(gulp.dest(settings.distFolder))
