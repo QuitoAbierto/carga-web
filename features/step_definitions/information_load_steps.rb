@@ -14,7 +14,7 @@ end
 
 Cuando(/^selecciono una ubicación$/) do
   find('#my-map').click
-  find('.next').click
+  find('#next-button').click
 end
 
 Cuando(/^lleno el formulario con los siguientes datos:$/) do |table|
@@ -36,7 +36,7 @@ end
 
 Cuando(/^cargo la información de una parada$/) do
   find('#my-map').click
-  find('.next').click
+  find('#next-button').click
   select 'Alborada', :from => 'line-field'
   fill_in 'name-field', :with => 'default_name'
   fill_in 'description-field', :with => 'default_description'
