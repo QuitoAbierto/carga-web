@@ -25,7 +25,33 @@
   <div class="covering">
     <h1 class="h1-header bounceInLeft"><a href="/" class="header-link">Quito Abierto</a></h1>
     <div class="container-fluid">
-      <h1 class="text-center">En construcion</h1>
+      <div class="centerUp">
+        <form>
+          <ul class="progress-form">
+            <li class="fields-container form-group active">
+              <div id="form-fields">
+                <h3>Complete la siguiente informacion</h3>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name-field" placeholder="Nombre" required="required"/>
+                </div>
+                <div class="form-group">
+                  <textarea rows="4" type="text" class="form-control" id="description-field" placeholder="Descripción" required=""></textarea>
+                </div>
+              </div>
+              <div id="message-box" class="form-group"></div>
+              <br/>
+            </li>
+            <li class="map-container form-group fadeInRightBig hide inactive">
+              <div id="route-map"></div>
+              <button id="locator" type="button" class="btn btn-sm btn-default map-control">
+                &nbsp;<span class="glyphicon glyphicon-screenshot"></span>&nbsp;
+              </button>
+            </li>
+          </ul>
+        </form>
+        <button id="next-button" class="btn btn-info btn-lg play">Siguiente <span class="glyphicon glyphicon-play"></span></button>
+        <button id="play-button" class="btn btn-success btn-lg play hide">Empezar <span class="glyphicon glyphicon-play"></span></button>
+      </div>
       <div class="clearfix"></div>
     </div>
   </div>
@@ -35,6 +61,7 @@
   <script src="/vendor/js/bootstrap.min.js"></script>
   <script src="/vendor/js/leaflet.js"></script>
   <script src="/dist/route.bundle.js"></script>
-  <script src="/dist/form.js"></script>
+  <script src="/dist/route-map.js"></script>
+  <script src="/dist/route-form.js"></script>
 </body>
 </html>

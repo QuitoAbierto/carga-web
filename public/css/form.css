@@ -28,7 +28,7 @@ html, body, #my-map {
   transition: height 1s, opacity 0.5s;
 }
 
-.next {
+.play {
   position: absolute;
   bottom:3%;
   right:3%;

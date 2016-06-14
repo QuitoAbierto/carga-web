@@ -4,7 +4,11 @@
 
 #my-map {
   width: 100%;
-  height: 400px;
+}
+
+#route-map {
+  width: 100%;
+  height: 100%;
 }
 
 .main-content {

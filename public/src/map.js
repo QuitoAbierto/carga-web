@@ -14,7 +14,7 @@ function addMarker(e) {
   console.log(e.latlng)
   selectedLocation = e.latlng
   myMarker.addTo(myMap)
-  $('.next').removeClass('hide')
+  $('#next-button').removeClass('hide')
 }
 
 let locatorIcon = 'glyphicon glyphicon-screenshot'
