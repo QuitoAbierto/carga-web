@@ -29,7 +29,7 @@ function saveRouteNode(data) {
     console.log('not saving');
   } else {
     $.ajax({
-      url: `${config.api.host}api/route`,
+      url: `${config.api.host}api/ruta`,
       method: 'POST',
       data: JSON.stringify(data),
       contentType: "application/json",
