@@ -4,12 +4,21 @@ Dado(/^que ingreso a la aplicación$/) do
   visit '/'
 end
 
-Cuando(/^estoy en la página de mapeo de paradas$/) do
-  find('#stop-mapping-button').click
+Cuando(/^estoy en la página de mapeo de "([^"]*)"$/) do |page|
+  page_map = {
+    paradas: 'stop',
+    rutas: 'route'
+  }
+  button_id = "##{page_map[page.to_sym]}-mapping-button"
+  find(button_id).click
+end
+
+Entonces(/^veo el mapa para seleccionar paradas$/) do
+  find '#my-map'
 end
 
 Entonces(/^veo el formulario para cargar los datos$/) do
-  find '#my-map'
+  find '.fields-container'
 end
 
 Cuando(/^selecciono una ubicación$/) do

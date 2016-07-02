@@ -11,4 +11,4 @@ COPY Gemfile /test/
 COPY Gemfile.lock /test/
 RUN bundle install
 CMD bundle exec cucumber
-ADD . /test
+ADD features /test/features/

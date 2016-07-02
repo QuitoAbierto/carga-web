@@ -82,7 +82,7 @@ gulp.task('app', (cb) =>
 
 gulp.task('feature', shell.task([
   'docker build -t features -f ./Dockerfile-test .',
-  'docker run --net=host -v tmp:/tmp/screenshot features'
+  'docker run --net=host -v $(pwd)/tmp:/tmp/screenshot features'
 ]))
 
 gulp.task('watch-js', () =>
