@@ -7,7 +7,14 @@ let selectedLocation = undefined
 
 myMap.locate({setView: true, maxZoom: 18})
 let myMarker = L.marker([-0.1828190562356577, -78.48433256149292])
-let marker = L.marker()
+let oval = L.icon({
+  iconUrl: '/images/circle.png',
+  iconAnchor: [8, 8],
+  iconSize: [16, 16]
+})
+let marker = L.marker([], {
+  icon: oval
+})
 let circle = L.circle()
 
 function addMarker(e) {
