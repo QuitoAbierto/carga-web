@@ -45,6 +45,22 @@ a.anchor {
   color: #4e4e4e;
 }
 
+#locator:hover {
+  background-color: #f4f4f4;
+}
+
+#locator:active {
+  background-color: #f4f4f4;
+}
+
+#locator:link {
+  background-color: #f4f4f4;
+}
+
+#locator:focus {
+  background-color: #f4f4f4;
+}
+
 .map-control {
   color: #222222;
   border-radius: 4px;

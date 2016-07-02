@@ -7,6 +7,8 @@ let selectedLocation = undefined
 
 myMap.locate({setView: true, maxZoom: 18})
 let myMarker = L.marker([-0.1828190562356577, -78.48433256149292])
+let marker = L.marker()
+let circle = L.circle()
 
 function addMarker(e) {
   myMarker.setLatLng(e.latlng)
@@ -22,8 +24,11 @@ let loadingIcon = 'glyphicon glyphicon-refresh spin'
 let icon = $('#locator span')
 
 function locationFound(e) {
+  var radius = e.accuracy / 2
   icon.removeClass(loadingIcon)
   icon.addClass(locatorIcon)
+  marker.setLatLng(e.latlng).update().addTo(myMap)
+  circle.setLatLng(e.latlng).setRadius(radius).addTo(myMap)
 }
 
 myMap.on('click', addMarker)
@@ -32,7 +37,7 @@ myMap.on('locationfound', locationFound)
 function locateUser() {
   icon.removeClass(locatorIcon)
   icon.addClass(loadingIcon)
-  myMap.locate({setView: true, maxZoom: 16})
+  myMap.locate({setView: true, maxZoom: 18})
 }
 
 $('#locator').on('click', locateUser)
