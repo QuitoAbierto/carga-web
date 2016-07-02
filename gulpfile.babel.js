@@ -6,7 +6,7 @@ const babel = require('gulp-babel')
 const watch = require('gulp-watch')
 const shell = require('gulp-shell')
 const rename = require('gulp-rename')
-const webpack = require('gulp-webpack')
+const webpack = require('webpack-stream')
 const sequence = require('gulp-sequence')
 
 const settings = {
