@@ -37,6 +37,11 @@ Cuando(/^envío el formulario$/) do
   click_link('submit')
 end
 
+Cuando(/^hago click en siguiente$/) do
+  next_button = find '#next-button'
+  next_button.click
+end
+
 Entonces(/^veo el mensaje "([^"]*)"$/) do |message|
   wait_for_ajax
   message_box = find '#message-box'
