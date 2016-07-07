@@ -28,6 +28,15 @@ a.anchor {
     visibility: hidden;
 }
 
+.mastfoot {
+    position: fixed;
+    bottom: 0;
+}
+
+.inner {
+    padding: 30px;
+}
+
 .main-docs {
   background-color: white;
   border-left: 1px solid #eee;
