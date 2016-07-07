@@ -1,0 +1,3 @@
+[submodule "public/api-docs"]
+	path = public/api-docs
+	url = git@github.com:QuitoAbierto/api-docs.git
