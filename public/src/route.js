@@ -1,5 +1,19 @@
 const config = require('./config.js')
 let previousPoint;
+let routeInterval;
+let successAlert = `<div class="alert alert-success alert-dismissible fade in" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+  Ruta guardada exitosamente
+</div>`
+
+let startAlert = `<div class="alert alert-success alert-dismissible fade in" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+  Mapeando ruta...
+</div>`
 
 function successfullySaved() {
   console.log('chevere')
@@ -20,7 +34,6 @@ function isDistanceGreaterThanTwoMeters(point1, point2) {
           (1 - c((lng2 - lng1) * p))/2;
 
   let distance = 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
-  console.log(distance)
   return distance < 0.002;
 }
 
@@ -28,6 +41,7 @@ function saveRouteNode(data) {
   if (isDistanceGreaterThanTwoMeters(previousPoint, data.location)) {
     console.log('not saving');
   } else {
+    console.log('saving');
     $.ajax({
       url: `${config.api.host}api/ruta`,
       method: 'POST',
@@ -44,20 +58,39 @@ function saveRouteNode(data) {
 }
 
 function startRouting(name, description) {
-  setInterval(() => {
+  routeInterval = setInterval(() => {
     let location = currentLocation
     let data = {
       name: name,
       description: description,
       location: location
     }
-    saveRouteNode(data)
-    console.log(data)
+    if (!!currentLocation) {
+      saveRouteNode(data)
+      console.log('data: ', data)
+    } else {
+      console.log('not saving')
+    }
   }, 3000)
 }
 
-$('#play-button').on('click', (e)=> {
+let playButton = $('#play-button')
+let stopButton = $('#stop-button')
+let newButton = $('#new-button')
+let messageBox = $('#message-box')
+
+playButton.on('click', (e)=> {
   let name = $('#name-field').val()
   let description = $('#description-field').val()
   startRouting(name, description);
+  messageBox.html(startAlert)
+  playButton.addClass('hide')
+  stopButton.removeClass("hide")
+})
+
+stopButton.on('click', (e)=> {
+  stopButton.addClass('hide')
+  messageBox.html(successAlert)
+  newButton.removeClass("hide")
+  clearInterval(routeInterval)
 })

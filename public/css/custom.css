@@ -7,6 +7,13 @@
   top: 79px;
 }
 
+#message-box {
+  position: absolute;
+  top: 55px;
+  right: 3%;
+  z-index: 100;
+}
+
 #route-map {
   width: 100%;
   height: 100%;

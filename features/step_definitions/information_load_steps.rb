@@ -66,3 +66,19 @@ Cuando(/^quiero crear una nueva parada$/) do
   new_stop_button = find '#new-stop'
   new_stop_button.click
 end
+
+Cuando(/^lleno el formulario de ruta con los siguientes datos:$/) do |table|
+  data = table.hashes[0]
+  fill_in 'name-field', :with => data['nombre']
+  fill_in 'description-field', :with => data['descripción']
+end
+
+Cuando(/^hago click en empezar$/) do
+  next_button = find '#play-button'
+  next_button.click
+end
+
+Cuando(/^hago click en finalizar$/) do
+  next_button = find '#stop-button'
+  next_button.click
+end

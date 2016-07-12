@@ -10,7 +10,7 @@ $(function() {
     let name = $('#name-field').val()
     let description = $('#description-field').val()
     if (!!name && !!description) {
-      $('#next-button').removeClass("fadeInUp").addClass('fadeOutDown')
+      $('#next-button').removeClass("fadeInUp").addClass('hide')
       if ($('.progress-form li').hasClass('active')) {
         $('p.alerted').removeClass('fadeInLeft').addClass('fadeOutUp')
         let $active = $('li.active')
@@ -18,7 +18,7 @@ $(function() {
         let $play = $('#play-button')
         $active.removeClass("fadeInRightBig active").addClass('fadeOutLeftBig')
         $inactive.removeClass("hide inactive").addClass("active fadeInRightBig").next().addClass('inactive')
-        $play.removeClass("hide").addClass('fadeInUp')
+        $play.removeClass("hide")
       }
       initMap();
     } else {
